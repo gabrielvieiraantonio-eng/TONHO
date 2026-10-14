@@ -1,1 +1,134 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Grande Corrida do Conhecimento 🐴🏆</title>
+  
+  <!-- Fontes Infantis do Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600;700&family=Nunito:wght@700;900&display=swap" rel="stylesheet">
+  
+  <!-- Estilo CSS Externo -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
 
+  <!-- CABEÇALHO -->
+  <header class="app-header">
+    <div class="logo-container">
+      <span class="emoji-logo">🐴</span>
+      <h1>Corrida do Conhecimento</h1>
+      <span class="emoji-logo">🏆</span>
+    </div>
+    <p class="sub-logo">Responda certo para seu cavalo acelerar até a linha de chegada!</p>
+  </header>
+
+  <!-- CONTEÚDO PRINCIPAL (TELAS DO JOGO) -->
+  <main class="game-container">
+
+    <!-- TELA 1: SELEÇÃO DE CAVALO -->
+    <section id="screen-select" class="screen active">
+      <h2>Escolha seu Cavalo Campeão!</h2>
+      <div class="horse-selector">
+        <button class="btn-horse selected" data-horse="🐴" data-color="#FF5722">
+          <span class="horse-avatar">🐴</span>
+          <span class="horse-name">Pé de Pano</span>
+        </button>
+        <button class="btn-horse" data-horse="🦄" data-color="#9C27B0">
+          <span class="horse-avatar">🦄</span>
+          <span class="horse-name">Unicórnio Fagulha</span>
+        </button>
+        <button class="btn-horse" data-horse="🐎" data-color="#2196F3">
+          <span class="horse-avatar">🐎</span>
+          <span class="horse-name">Relâmpago</span>
+        </button>
+        <button class="btn-horse" data-horse="🦓" data-color="#4CAF50">
+          <span class="horse-avatar">🦓</span>
+          <span class="horse-name">Zebrinha Veloz</span>
+        </button>
+      </div>
+
+      <button id="btn-start-game" class="btn-action pulse">
+        🚀 COMEÇAR CORRIDA!
+      </button>
+    </section>
+
+    <!-- TELA 2: PISTAS E PERGUNTAS DA CORRIDA -->
+    <section id="screen-game" class="screen">
+      <!-- Painel Superior: Vidas e Pontuação -->
+      <div class="hud-bar">
+        <div class="hud-card lives-card">
+          <span class="hud-label">Vidas:</span>
+          <div id="lives-container" class="lives-icons">
+            <span>❤️</span><span>❤️</span><span>❤️</span>
+          </div>
+        </div>
+
+        <div class="hud-card level-card">
+          <span id="question-tracker">Pergunta 1/6</span>
+        </div>
+
+        <div class="hud-card score-card">
+          <span class="hud-label">Pontos:</span>
+          <span id="score-display">0</span>
+        </div>
+      </div>
+
+      <!-- Pista de Corrida Animada -->
+      <div class="race-track-container">
+        <div class="finish-line">🏁</div>
+        
+        <!-- Raias dos Cavalos -->
+        <div class="track-lane">
+          <span class="lane-label">Você</span>
+          <div id="player-horse" class="horse-runner">🐴</div>
+        </div>
+        
+        <div class="track-lane opponent-lane">
+          <span class="lane-label">Rival</span>
+          <div id="rival-horse" class="horse-runner">🐎</div>
+        </div>
+      </div>
+
+      <!-- Caixa de Pergunta -->
+      <div class="quiz-card">
+        <div class="category-badge" id="category-badge">Matemática</div>
+        <h3 id="question-text">Quanto é 7 x 8?</h3>
+        
+        <div id="options-container" class="options-grid">
+          <!-- Botões de respostas injetados dinamicamente via JS -->
+        </div>
+      </div>
+    </section>
+
+    <!-- TELA 3: RESULTADO FINAL / PÓDIO -->
+    <section id="screen-end" class="screen">
+      <div class="result-card">
+        <div id="result-emoji" class="result-emoji">🏆</div>
+        <h2 id="result-title">Você Venceu a Corrida!</h2>
+        <p id="result-message">Incrível! Você respondeu tudo direitinho e cruzou a linha em 1º lugar!</p>
+        
+        <div class="final-score-box">
+          <p>Sua pontuação final:</p>
+          <span id="final-score-value">0</span> pontos
+        </div>
+
+        <button id="btn-restart" class="btn-action">
+          🔄 JOGAR NOVAMENTE
+        </button>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- RODAPÉ -->
+  <footer class="app-footer">
+    <p>🎮 Jogo Educativo para o 6º Ano | Criado com 💛 para o Conhecimento!</p>
+  </footer>
+
+  <!-- Script JavaScript Externo -->
+  <script src="script.js"></script>
+</body>
+</html>
